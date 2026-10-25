@@ -13,7 +13,7 @@ fmi_learning/
 │  │  ├─ schema/               #   XML Schema（*.xsd）
 │  │  └─ headers/              #   C 接口头文件（fmi3*.h）
 │  ├─ guides/                  # 官方/社区指南（Implementers' Guide、速查表等）
-│  └─ notes/                   # 中文教学讲义（第 1–8 章已完成初稿）
+│  └─ notes/                   # 中文教学讲义（第 1–9 章已完成初稿）
 ├─ examples/                    # 所有代码与示例
 │  ├─ reference-fmus/          # 官方 Reference FMUs（C 源码）
 │  ├─ fmus/                    # 预编译好的 FMU 包（FMI 2.0 / 3.0）

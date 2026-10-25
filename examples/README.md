@@ -19,6 +19,7 @@ examples/
 | 模型 | 演示的 FMI 特性 | 适合用来学 |
 | --- | --- | --- |
 | [`BouncingBall`](reference-fmus/BouncingBall) | 状态事件、连续状态、参数 | **第一个例子**：初始化、事件模式、重初始化 |
+| [`Clocks`](reference-fmus/Clocks) | Clock、模型分区、Scheduled Execution | **唯一的 SE 例子**：countdown Clock、优先级、抢占 |
 | [`Dahlquist`](reference-fmus/Dahlquist) | 线性测试方程、解析解 | 校验积分精度、步长控制 |
 | [`Feedthrough`](reference-fmus/Feedthrough) | 所有变量类型、数组、别名、单位 | `modelDescription.xml` 字段最全的参考 |
 | [`Resource`](reference-fmus/Resource) | 从 FMU 资源目录读取文件 | `resources/` 目录与 `fmi3GetString` 等 API |
@@ -27,7 +28,7 @@ examples/
 | [`StateSpace`](reference-fmus/StateSpace) | 数组变量、结构参数 | FMI 3.0 数组与 `fmi3Set*` 批量接口 |
 | [`VanDerPol`](reference-fmus/VanDerPol) | 非线性 ODE | 与解析/参考轨迹对比 |
 
-> `Clocks` 目录演示 FMI 3.0 的 Clock 与 Scheduled Execution；`Wasm` 演示 WebAssembly 平台。
+> `Wasm` 目录演示 WebAssembly 平台。
 
 ### 目录结构（每个模型）
 

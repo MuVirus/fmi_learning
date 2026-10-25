@@ -17,7 +17,7 @@
 | --- | --- | --- |
 | 第一部分 入门 | 第 1–2 章 | ✅ 初稿 |
 | 第二部分 看懂描述文件 | 第 3–5 章 | ✅ 初稿 |
-| 第三部分 接口与状态机 | 第 6–9 章 | 🚧 第 6–8 章初稿 |
+| 第三部分 接口与状态机 | 第 6–9 章 | ✅ 初稿 |
 | 第四部分 动手实现 | 第 10–14 章 | 待写 |
 
 ---
@@ -63,7 +63,7 @@
   - 动手：结构校验 + 语义检查脚本，完整一致性清单
   - 规范：[2.4 节](../spec-3.0.2/html/index.html#modelDescription.xml)
 
-## 第三部分：接口与状态机（第 6–8 章初稿）
+## 第三部分：接口与状态机（第 6–9 章初稿）
 
 - [x] **第 6 章 公共状态机** → [06-state-machine.md](06-state-machine.md)
   - 实例生命周期、`fmi3Instantiate*` 参数与失败处理
@@ -88,11 +88,15 @@
   - 调用序列：`simulate_fmi3_cs.c` 逐段讲解
   - 动手：能力盘点、12 次碰撞、24 次事件、指针 bug
   - 规范：4.1 / 4.2 / 4.3 / 4.4 节
-- [ ] **第 9 章 Scheduled Execution 与 Clock**
-  - Clock 的种类（周期性、触发式、通信点时钟）
-  - 时钟激活、`fmi3ActivateModelPartition`
-  - 与 CS 的本质区别
-  - 规范：5.1 / 5.2 / 5.3 节
+- [x] **第 9 章 Scheduled Execution 与 Clock** → [09-scheduled-execution.md](09-scheduled-execution.md)
+  - 模型分区、clocked variable 与 Clock 的对应关系
+  - `ClockActivationMode` / `ClockUpdateMode` 两个专属状态
+  - `fmi3ActivateModelPartition` 与 SE 的调用序列
+  - Clock 六种类型、`fmi3IntervalQualifier` 与调度含义
+  - `priority`、抢占与 `lockPreemption` / `unlockPreemption`
+  - 调用序列：`scs_synchronous.c` 与 `scs_threaded.c` 逐段讲解
+  - 动手：Clock 盘点、同步/多线程时序、状态掩码、签名核对
+  - 规范：5.1 / 5.2 / 5.3 / 5.4 节
 
 ## 第四部分：动手实现（待写）
 

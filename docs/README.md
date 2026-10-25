@@ -32,7 +32,7 @@ docs/
 
 ## 3. 中文讲义 `notes/`
 
-`notes/` 是课程正文。第一、二部分已完成初稿，第三部分已完成第 6–8 章：
+`notes/` 是课程正文。第一、二部分已完成初稿，第三部分已完成第 6–9 章：
 
 - [第 1 章 为什么需要 FMI](notes/01-why-fmi.md)
 - [第 2 章 解包一个 FMU](notes/02-unpack-fmu.md)
@@ -42,6 +42,7 @@ docs/
 - [第 6 章 公共状态机](notes/06-state-machine.md)
 - [第 7 章 Model Exchange](notes/07-model-exchange.md)
 - [第 8 章 Co-Simulation](notes/08-co-simulation.md)
+- [第 9 章 Scheduled Execution 与 Clock](notes/09-scheduled-execution.md)
 
 后续章节（三种接口状态机、动手实现）的大纲见 [`notes/README.md`](notes/README.md)。
 

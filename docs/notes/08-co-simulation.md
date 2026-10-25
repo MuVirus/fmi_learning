@@ -1053,17 +1053,19 @@ fmi3SetShiftDecimal(fmu, &vrClock, 1, &shift);
 
 ```c
 typedef enum {
-    fmi3IntervalChanged,
+    fmi3IntervalNotYetKnown,
     fmi3IntervalUnchanged,
-    fmi3IntervalNotYetKnown
+    fmi3IntervalChanged
 } fmi3IntervalQualifier;
 ```
 
-| 值 | 含义 | 导入端动作 |
-| --- | --- | --- |
-| `fmi3IntervalChanged` | 间隔变了 | 重新调度这个 Clock 的模型分区 |
-| `fmi3IntervalUnchanged` | 和上次一样 | 保持已有调度 |
-| `fmi3IntervalNotYetKnown` | 还不知道（countdown aperiodic） | 暂时不能调度 |
+注意枚举值的顺序：`NotYetKnown = 0`、`Unchanged = 1`、`Changed = 2`。Reference 的 `examples/reference-fmus/Clocks/model.c` 正是用数字 `2` 表示 `fmi3IntervalChanged`。
+
+| 值 | 数值 | 含义 | 导入端动作 |
+| --- | --- | --- | --- |
+| `fmi3IntervalNotYetKnown` | 0 | 还不知道（countdown aperiodic） | 暂时不能调度 |
+| `fmi3IntervalUnchanged` | 1 | 和上次一样 | 保持已有调度 |
+| `fmi3IntervalChanged` | 2 | 间隔变了 | 重新调度这个 Clock 的模型分区 |
 
 这个枚举在 SE 中尤其重要，第 9 章会用它来安排 `fmi3ActivateModelPartition`。
 
