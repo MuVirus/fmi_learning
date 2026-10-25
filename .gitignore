@@ -13,6 +13,12 @@ out/
 _unpacked/
 tmp/
 
+# Reference FMUs 示例程序在本目录运行时产生的输出
+*_me_out.csv
+*_me_log.txt
+*_cs_out.csv
+*_cs_log.txt
+
 # Python
 __pycache__/
 *.pyc

@@ -13,14 +13,14 @@ fmi_learning/
 │  │  ├─ schema/               #   XML Schema（*.xsd）
 │  │  └─ headers/              #   C 接口头文件（fmi3*.h）
 │  ├─ guides/                  # 官方/社区指南（Implementers' Guide、速查表等）
-│  └─ notes/                   # 中文教学讲义（建设中）
+│  └─ notes/                   # 中文教学讲义（第 1–2 章已完成）
 ├─ examples/                    # 所有代码与示例
 │  ├─ reference-fmus/          # 官方 Reference FMUs（C 源码）
 │  └─ fmus/                    # 预编译好的 FMU 包（FMI 2.0 / 3.0）
 └─ tools/                       # 自研工具（规划中，如 FMU 检查器）
 ```
 
-每个目录下都有 `README.md` 说明用途和用法，建议从 [`docs/README.md`](docs/README.md) 开始。
+每个目录下都有 `README.md` 说明用途和用法，建议从 [`docs/README.md`](docs/README.md) 开始；课程正文从 [`docs/notes/README.md`](docs/notes/README.md) 开始。
 
 ## 快速开始
 

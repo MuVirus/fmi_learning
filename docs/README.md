@@ -32,20 +32,12 @@ docs/
 
 ## 3. 中文讲义 `notes/`
 
-`notes/` 是后续要写的教学内容，目前只有大纲，见 [`notes/README.md`](notes/README.md)。计划覆盖：
+`notes/` 是课程正文。第一部分（入门）已完成初稿：
 
-1. FMI 是什么、解决什么问题
-2. FMU 内部结构解剖
-3. `modelDescription.xml` 逐字段讲解
-4. 变量类型、variability、initial 与别名
-5. Model Exchange 状态机与调用顺序
-6. Co-Simulation 状态机与步长控制
-7. Scheduled Execution 与 Clock
-8. 事件处理：状态事件、时间事件、步事件
-9. 用 C 实现一个最小 FMU
-10. 用 C / Python 导入并仿真 FMU
-11. 构建、打包与合规性检查
-12. 常见错误与调试技巧
+- [第 1 章 为什么需要 FMI](notes/01-why-fmi.md)
+- [第 2 章 解包一个 FMU](notes/02-unpack-fmu.md)
+
+后续章节（`modelDescription.xml` 精读、变量系统、三种接口状态机、动手实现）的大纲见 [`notes/README.md`](notes/README.md)。
 
 ## 阅读建议
 
