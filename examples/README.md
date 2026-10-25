@@ -3,7 +3,9 @@
 ```
 examples/
 ├─ reference-fmus/   # 官方 Reference FMUs：C 源码 + 导入端示例（FMI 2.0 / 3.0）
-└─ fmus/             # 预编译好的 FMU 文件，用于直接练习导入/仿真
+├─ fmus/             # 预编译好的 FMU 文件，用于直接练习导入/仿真
+├─ xml/              # 教学用的最小 XML 示例（单位、类型、枚举）
+└─ scripts/          # modelDescription.xml 校验脚本（PowerShell）
 ```
 
 ## Reference FMUs
@@ -108,6 +110,24 @@ extra/org.fmi-standard.fmi-ls-ref/...
 所以同一份 FMU 可以直接拷到 Windows / Linux / macOS，或用支持 WASM 的导入端运行。适合还没装编译环境时直接做导入练习。
 
 > 本仓库也已在 `reference-fmus/build/fmus/` 下生成了一份本机编译的 Windows 版本（`build/` 已被 `.gitignore` 忽略），可与 release 版对照。
+
+
+## 描述文件示例与校验脚本
+
+`xml/` 存放课程里自包含的最小描述文件，`scripts/` 存放配套的 PowerShell 检查工具：
+
+| 路径 | 用途 |
+| --- | --- |
+| [`xml/units-and-types.xml`](xml/units-and-types.xml) | 第 5 章实验：单位、显示单位、类型定义、枚举 |
+| [`scripts/validate-model-description.ps1`](scripts/validate-model-description.ps1) | 用官方 XSD 做结构校验 |
+| [`scripts/check-model-description.ps1`](scripts/check-model-description.ps1) | 检查 XSD 表达不了的语义规则（引用、唯一性、`initial`/`start` 等） |
+
+```powershell
+.\examples\scripts\validate-model-description.ps1 .\examples\xml\units-and-types.xml
+.\examples\scripts\check-model-description.ps1    .\examples\xml\units-and-types.xml
+```
+
+两个脚本的退出码都是 `0` 成功 / `1` 校验失败 / `2` 文件无法读取。
 
 
 ## 下一步

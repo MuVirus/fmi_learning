@@ -13,10 +13,12 @@ fmi_learning/
 │  │  ├─ schema/               #   XML Schema（*.xsd）
 │  │  └─ headers/              #   C 接口头文件（fmi3*.h）
 │  ├─ guides/                  # 官方/社区指南（Implementers' Guide、速查表等）
-│  └─ notes/                   # 中文教学讲义（第 1–2 章已完成）
+│  └─ notes/                   # 中文教学讲义（第 1–5 章已完成初稿）
 ├─ examples/                    # 所有代码与示例
 │  ├─ reference-fmus/          # 官方 Reference FMUs（C 源码）
-│  └─ fmus/                    # 预编译好的 FMU 包（FMI 2.0 / 3.0）
+│  ├─ fmus/                    # 预编译好的 FMU 包（FMI 2.0 / 3.0）
+│  ├─ xml/                     # 教学用的最小 modelDescription.xml 示例
+│  └─ scripts/                 # XSD 校验与语义检查脚本（PowerShell）
 └─ tools/                       # 自研工具（规划中，如 FMU 检查器）
 ```
 
@@ -44,6 +46,13 @@ fmi_learning/
    # 方式 B：用仓库里已编译好的 FMI 3.0 ME 示例程序
    .\examples\reference-fmus\build\temp\BouncingBall_me.exe `
        .\examples\fmus\3.0\BouncingBall.fmu
+   ```
+
+5. **校验描述文件**：用仓库脚本对任意 `modelDescription.xml` 做 XSD 校验和语义检查：
+
+   ```powershell
+   .\examples\scripts\validate-model-description.ps1 .\examples\reference-fmus\BouncingBall\FMI3.xml
+   .\examples\scripts\check-model-description.ps1    .\examples\reference-fmus\BouncingBall\FMI3.xml
    ```
 
 ## 建议学习路线

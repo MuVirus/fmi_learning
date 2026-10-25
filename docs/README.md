@@ -32,12 +32,15 @@ docs/
 
 ## 3. 中文讲义 `notes/`
 
-`notes/` 是课程正文。第一部分（入门）已完成初稿：
+`notes/` 是课程正文。第一部分（入门）和第二部分（描述文件）已完成初稿：
 
 - [第 1 章 为什么需要 FMI](notes/01-why-fmi.md)
 - [第 2 章 解包一个 FMU](notes/02-unpack-fmu.md)
+- [第 3 章 `modelDescription.xml` 精读](notes/03-model-description.md)
+- [第 4 章 变量系统](notes/04-variables.md)
+- [第 5 章 单位、类型与注解](notes/05-units-types-annotations.md)
 
-后续章节（`modelDescription.xml` 精读、变量系统、三种接口状态机、动手实现）的大纲见 [`notes/README.md`](notes/README.md)。
+后续章节（三种接口状态机、动手实现）的大纲见 [`notes/README.md`](notes/README.md)。
 
 ## 阅读建议
 

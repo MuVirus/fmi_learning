@@ -16,7 +16,7 @@
 | 部分 | 章节 | 状态 |
 | --- | --- | --- |
 | 第一部分 入门 | 第 1–2 章 | ✅ 初稿 |
-| 第二部分 看懂描述文件 | 第 3–5 章 | 待写 |
+| 第二部分 看懂描述文件 | 第 3–5 章 | ✅ 初稿 |
 | 第三部分 接口与状态机 | 第 6–9 章 | 待写 |
 | 第四部分 动手实现 | 第 10–14 章 | 待写 |
 
@@ -39,26 +39,29 @@
 
 ---
 
-## 第二部分：看懂描述文件（待写）
+## 第二部分：看懂描述文件（初稿）
 
-- [ ] **第 3 章 `modelDescription.xml` 精读**
+- [x] **第 3 章 `modelDescription.xml` 精读** → [03-model-description.md](03-model-description.md)
   - 根元素属性：`fmiVersion`、`modelName`、`instantiationToken`（对比 2.0 的 `guid`）
   - `ModelExchange` / `CoSimulation` / `ScheduledExecution` 元素与能力标志
-  - `DefaultExperiment`、`UnitDefinitions`、`TypeDefinitions`
-  - 动手：用 XSD 校验 `FMI3.xml`
-  - 规范：2.4 节
-- [ ] **第 4 章 变量系统**
+  - `DefaultExperiment`、`LogCategories`、`ModelStructure`
+  - 动手：用 XSD 校验 `FMI3.xml`，并理解 XSD 查不出的语义
+  - 规范：[2.4 节](../spec-3.0.2/html/index.html#modelDescription.xml)
+- [x] **第 4 章 变量系统** → [04-variables.md](04-variables.md)
   - 数据类型：Float32/64、Int8~64、Boolean、String、Binary、Clock、Enumeration
   - `variability`（constant / fixed / tunable / discrete / continuous）
-  - `causality`（parameter / calculatedParameter / input / output / local / independent）
-  - `initial`、`reinit`、别名（`Alias`）、`ValueReference`
-  - 结构参数与数组（`dimension`、`start` 列表）
-  - 规范：2.2 节 General Mechanisms
-- [ ] **第 5 章 单位、类型与注解**
-  - `UnitDefinitions` / `DisplayUnit`
-  - 自定义类型与枚举
-  - `annotations` 与供应商扩展
-  - 规范：2.4 节
+  - `causality`（parameter / calculatedParameter / structuralParameter / input / output / local / independent）
+  - `initial`、`reinit`、别名（`Alias`）、`valueReference`
+  - 结构参数与数组（`Dimension`、`start` 列表、行优先序列化）
+  - 命名约定（`flat` / `structured`）与 Clock 变量速览
+  - 规范：[2.4.7 Model Variables](../spec-3.0.2/html/index.html#ModelVariables)
+- [x] **第 5 章 单位、类型与注解** → [05-units-types-annotations.md](05-units-types-annotations.md)
+  - `UnitDefinitions` / `BaseUnit` / `DisplayUnit` 与换算公式
+  - `TypeDefinitions`、`declaredType` 的默认值与覆盖规则、枚举
+  - `Annotations` 与供应商扩展
+  - `terminalsAndIcons.xml`：端子分组、匹配规则、图标
+  - 动手：结构校验 + 语义检查脚本，完整一致性清单
+  - 规范：[2.4 节](../spec-3.0.2/html/index.html#modelDescription.xml)
 
 ## 第三部分：接口与状态机（待写）
 

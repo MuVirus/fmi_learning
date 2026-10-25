@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  第 5 章实验用最小描述文件：单位 + 类型 + 枚举。
+  只用于 XML 校验和阅读，不对应可执行的二进制。
+-->
+<fmiModelDescription
+  fmiVersion="3.0"
+  modelName="UnitsAndTypes"
+  description="Minimal example for units, type definitions and enumerations"
+  instantiationToken="demo-units-and-types">
+
+  <CoSimulation modelIdentifier="UnitsAndTypes"/>
+
+  <UnitDefinitions>
+    <Unit name="K">
+      <BaseUnit K="1"/>
+      <DisplayUnit name="degC" factor="1" offset="-273.15"/>
+    </Unit>
+    <Unit name="m/s">
+      <BaseUnit m="1" s="-1"/>
+      <DisplayUnit name="km/h" factor="3.6"/>
+    </Unit>
+  </UnitDefinitions>
+
+  <TypeDefinitions>
+    <Float64Type name="Temperature"
+                 quantity="ThermodynamicTemperature"
+                 unit="K"
+                 displayUnit="degC"
+                 min="0"
+                 max="2000"/>
+    <Float64Type name="Velocity"
+                 quantity="Velocity"
+                 unit="m/s"
+                 displayUnit="km/h"/>
+    <EnumerationType name="Mode">
+      <Item name="Heating" value="0" description="Heat the medium"/>
+      <Item name="Cooling" value="1" description="Cool the medium"/>
+      <Item name="Idle" value="2" description="No active heating or cooling"/>
+    </EnumerationType>
+  </TypeDefinitions>
+
+  <ModelVariables>
+    <Float64 name="time" valueReference="0" causality="independent" variability="continuous" description="Simulation time"/>
+
+    <Float64 name="T" valueReference="1" causality="output" declaredType="Temperature" initial="exact" start="293.15"/>
+    <Float64 name="v" valueReference="2" causality="input" declaredType="Velocity" initial="exact" start="0"/>
+    <Enumeration name="mode" valueReference="3" causality="output" declaredType="Mode"/>
+  </ModelVariables>
+
+  <ModelStructure>
+    <Output valueReference="1"/>
+    <Output valueReference="3"/>
+  </ModelStructure>
+</fmiModelDescription>
