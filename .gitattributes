@@ -1,0 +1,10 @@
+* text=auto
+
+# 二进制产物：禁止换行符转换
+*.fmu binary
+*.wasm binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.png binary
+*.ico binary

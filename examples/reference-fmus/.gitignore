@@ -1,0 +1,8 @@
+# build artifacts
+__pycache__
+.cache
+.idea/
+*.fmu
+*.zip
+/venv/
+tests/work/

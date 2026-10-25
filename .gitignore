@@ -1,0 +1,29 @@
+# 构建产物
+build/
+out/
+*.obj
+*.o
+*.lib
+*.exp
+*.pdb
+*.ilk
+
+# 解包出来的 FMU / 临时文件
+*.fmu.gz
+_unpacked/
+tmp/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# 未声明许可证的第三方资料，仅本地参考，不纳入公开仓库
+docs/guides/fmi-3.0-cheatsheet/
