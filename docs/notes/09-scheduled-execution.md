@@ -1227,19 +1227,47 @@ SE 真正关心的配置都在 `<Clock>` 元素上：
 
 ### 9.10.5 三种接口的 XML 对照
 
+这三个元素共享一组**公共能力标志**（`modelIdentifier`、`needsExecutionTool`、`canBeInstantiatedOnlyOncePerProcess`、`canGetAndSetFMUState`、`canSerializeFMUState`、`providesDirectionalDerivatives`、`providesAdjointDerivatives`、`providesPerElementDependencies`），各自再叠加自己的专属标志。
+
 | | `<ModelExchange>` | `<CoSimulation>` | `<ScheduledExecution>` |
 | --- | --- | --- | --- |
-| 专属属性数 | 5 | 8 | **0** |
-| 关键标志 | `needsCompletedIntegratorStep` | `fixedInternalStepSize` | （无） |
-| | `canBeDeactivated` | `mightReturnEarlyFromDoStep` | |
-| | `canInterpolateInputs` | `providesIntermediateUpdate` | |
-| | `maxOutputDerivativeOrder` | `hasEventMode` | |
-| | `providesEvaluateDiscreteStates` | `canReturnEarlyAfterIntermediateUpdate` | |
-| | | `canHandleVariableCommunicationStepSize` | |
+| 专属属性数 | **2** | **9** | **0** |
+| 专属标志 | `needsCompletedIntegratorStep` | `canHandleVariableCommunicationStepSize` | （无） |
+| | `providesEvaluateDiscreteStates` | `fixedInternalStepSize` | |
+| | | `maxOutputDerivativeOrder` | |
 | | | `recommendedIntermediateInputSmoothness` | |
-| | | `canGetAndSetFMUState` | |
-| | | `canSerializeFMUState` | |
+| | | `providesIntermediateUpdate` | |
+| | | `mightReturnEarlyFromDoStep` | |
+| | | `canReturnEarlyAfterIntermediateUpdate` | |
+| | | `hasEventMode` | |
+| | | `providesEvaluateDiscreteStates` | |
 | 声明在哪 | `<ModelExchange>` | `<CoSimulation>` | `<ScheduledExecution>` |
+
+这份清单可以直接从 `docs/spec-3.0.2/schema/fmi3InterfaceType.xsd` 读出来：
+
+```xml
+<xs:complexType name="fmi3ModelExchange">
+  <xs:complexContent>
+    <xs:extension base="fmi3InterfaceType">
+      <xs:attribute name="needsCompletedIntegratorStep" type="xs:boolean" default="false"/>
+      <xs:attribute name="providesEvaluateDiscreteStates" type="xs:boolean" default="false"/>
+    </xs:extension>
+  </xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="fmi3ScheduledExecution">
+  <xs:complexContent>
+    <xs:extension base="fmi3InterfaceType"/>
+  </xs:complexContent>
+</xs:complexType>
+```
+
+> 注意区分两个同名属性：
+>
+> - **`canBeDeactivated`** 是 `<Clock>` 的属性（能否被 `fmi3SetClock` 停用），**不是**接口元素的标志。
+> - **`canInterpolateInputs`** 是 FMI 2.0 的 ME 标志，**FMI 3.0 已经删除**——3.0 用 `providesIntermediateUpdate` + `recommendedIntermediateInputSmoothness` 取代了它。
+> - **`maxOutputDerivativeOrder`** 是 `<CoSimulation>` 的标志，ME 不需要它（ME 的导数本来就是一阶的）。
+
 
 ---
 

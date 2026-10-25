@@ -1,12 +1,13 @@
 # 文档导航
 
-本目录存放 FMI 3.0 相关的全部文档，按「官方规范 → 辅助指南 → 中文讲义」组织。
+本目录存放 FMI 3.0 相关的全部文档，按「官方规范 → 辅助指南 → 中文讲义 → 分享材料」组织。
 
 ```
 docs/
 ├─ spec-3.0.2/     # 官方规范 3.0.2（只读存档）
 ├─ guides/         # 官方/社区指南（离线 HTML）
-└─ notes/          # 中文教学讲义（本项目编写）
+├─ notes/          # 中文教学讲义（本项目编写）
+└─ talks/          # 分享会材料（大纲 / 幻灯片 / 讲义）
 ```
 
 ## 1. 官方规范 `spec-3.0.2/`
@@ -45,6 +46,16 @@ docs/
 - [第 9 章 Scheduled Execution 与 Clock](notes/09-scheduled-execution.md)
 
 后续章节（三种接口状态机、动手实现）的大纲见 [`notes/README.md`](notes/README.md)。
+
+## 4. 分享会材料 `talks/`
+
+`talks/` 存放面向**对外分享 / 内部培训**的演示材料，按场次分子目录，每场先定大纲再做 PPT：
+
+| 场次 | 受众 | 时长 | 主题 | 状态 |
+| --- | --- | --- | --- | --- |
+| [`fmi3-cs-intro`](talks/fmi3-cs-intro/outline.md) | 软件开发工程师 | 60 min | FMI 3.0 实战，以 Co-Simulation 为主线 | 大纲已定 |
+
+场次索引和目录约定见 [`talks/README.md`](talks/README.md)。
 
 ## 阅读建议
 
