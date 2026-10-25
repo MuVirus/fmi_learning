@@ -17,7 +17,7 @@
 | --- | --- | --- |
 | 第一部分 入门 | 第 1–2 章 | ✅ 初稿 |
 | 第二部分 看懂描述文件 | 第 3–5 章 | ✅ 初稿 |
-| 第三部分 接口与状态机 | 第 6–9 章 | 🚧 第 6–7 章初稿 |
+| 第三部分 接口与状态机 | 第 6–9 章 | 🚧 第 6–8 章初稿 |
 | 第四部分 动手实现 | 第 10–14 章 | 待写 |
 
 ---
@@ -63,7 +63,7 @@
   - 动手：结构校验 + 语义检查脚本，完整一致性清单
   - 规范：[2.4 节](../spec-3.0.2/html/index.html#modelDescription.xml)
 
-## 第三部分：接口与状态机（第 6–7 章初稿）
+## 第三部分：接口与状态机（第 6–8 章初稿）
 
 - [x] **第 6 章 公共状态机** → [06-state-machine.md](06-state-machine.md)
   - 实例生命周期、`fmi3Instantiate*` 参数与失败处理
@@ -80,11 +80,14 @@
   - 调用序列：`simulate_fmi3_me.c` 逐段讲解与 `NX`/`NZ` 陷阱
   - 动手：XML 能力盘点、BouncingBall 事件扫描、ME 调用日志
   - 规范：3.1 / 3.2 / 3.3 / 3.4 节
-- [ ] **第 8 章 Co-Simulation**
-  - 步进接口 `fmi3DoStep`、早返回、中间更新
-  - 通信步长与 `fmi3Set{Interval|Shift}Fraction`
-  - 调用序列：`simulate_fmi3_cs.c` 逐行讲解
-  - 规范：4.1 / 4.2 / 4.3 节
+- [x] **第 8 章 Co-Simulation** → [08-co-simulation.md](08-co-simulation.md)
+  - 步进接口 `fmi3DoStep`、事件模式、早返回、中间更新
+  - `lastSuccessfulTime`、`fmi3Discard` 与通信循环
+  - 通信步长、固定内部步长、输出导数与平滑度
+  - Clock 的 Interval/Shift 在 CS 中的用法
+  - 调用序列：`simulate_fmi3_cs.c` 逐段讲解
+  - 动手：能力盘点、12 次碰撞、24 次事件、指针 bug
+  - 规范：4.1 / 4.2 / 4.3 / 4.4 节
 - [ ] **第 9 章 Scheduled Execution 与 Clock**
   - Clock 的种类（周期性、触发式、通信点时钟）
   - 时钟激活、`fmi3ActivateModelPartition`
