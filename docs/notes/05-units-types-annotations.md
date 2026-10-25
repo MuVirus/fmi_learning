@@ -977,4 +977,4 @@ ERROR   <Output> references '3', which is not an output variable
 
 描述文件部分到此结束。从第 6 章开始进入第三部分：**接口与状态机**。我们会把 `fmi3Instantiate*`、`fmi3EnterInitializationMode`、`fmi3ExitInitializationMode` 这些函数的调用顺序，和规范里的状态迁移图逐条对应起来。
 
-→ 第 6 章 公共状态机（第三部分，待写）
+→ [第 6 章 公共状态机](06-state-machine.md)

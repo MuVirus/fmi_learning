@@ -17,7 +17,7 @@
 | --- | --- | --- |
 | 第一部分 入门 | 第 1–2 章 | ✅ 初稿 |
 | 第二部分 看懂描述文件 | 第 3–5 章 | ✅ 初稿 |
-| 第三部分 接口与状态机 | 第 6–9 章 | 待写 |
+| 第三部分 接口与状态机 | 第 6–9 章 | 🚧 第 6 章初稿 |
 | 第四部分 动手实现 | 第 10–14 章 | 待写 |
 
 ---
@@ -63,12 +63,16 @@
   - 动手：结构校验 + 语义检查脚本，完整一致性清单
   - 规范：[2.4 节](../spec-3.0.2/html/index.html#modelDescription.xml)
 
-## 第三部分：接口与状态机（待写）
+## 第三部分：接口与状态机（第 6 章初稿）
 
-- [ ] **第 6 章 公共状态机**
-  - 实例生命周期、`fmi3Instantiate*` / `fmi3FreeInstance`
-  - 状态迁移图逐条解读
-  - 规范：2.3 节
+- [x] **第 6 章 公共状态机** → [06-state-machine.md](06-state-machine.md)
+  - 实例生命周期、`fmi3Instantiate*` 参数与失败处理
+  - `FMU State Settable` / `Initialized` 两个超级状态
+  - `Instantiated`、`InitializationMode`、`EventMode`、`Terminated`
+  - `ConfigurationMode` 与 `ReconfigurationMode` 的区别
+  - 事件迭代：`fmi3UpdateDiscreteStates` 的输出标志与循环写法
+  - 动手：从 XML 读能力标志、抽取 ME/CS/SE 调用序列、对照 Reference 状态掩码
+  - 规范：[2.3 节](../spec-3.0.2/html/index.html#common-state-machine)
 - [ ] **第 7 章 Model Exchange**
   - 连续时间模式、事件模式、`fmi3EnterEventMode`
   - 导数、离散状态、事件指示器
