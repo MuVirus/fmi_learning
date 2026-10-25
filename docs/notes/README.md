@@ -17,7 +17,7 @@
 | --- | --- | --- |
 | 第一部分 入门 | 第 1–2 章 | ✅ 初稿 |
 | 第二部分 看懂描述文件 | 第 3–5 章 | ✅ 初稿 |
-| 第三部分 接口与状态机 | 第 6–9 章 | 🚧 第 6 章初稿 |
+| 第三部分 接口与状态机 | 第 6–9 章 | 🚧 第 6–7 章初稿 |
 | 第四部分 动手实现 | 第 10–14 章 | 待写 |
 
 ---
@@ -63,7 +63,7 @@
   - 动手：结构校验 + 语义检查脚本，完整一致性清单
   - 规范：[2.4 节](../spec-3.0.2/html/index.html#modelDescription.xml)
 
-## 第三部分：接口与状态机（第 6 章初稿）
+## 第三部分：接口与状态机（第 6–7 章初稿）
 
 - [x] **第 6 章 公共状态机** → [06-state-machine.md](06-state-machine.md)
   - 实例生命周期、`fmi3Instantiate*` 参数与失败处理
@@ -73,11 +73,13 @@
   - 事件迭代：`fmi3UpdateDiscreteStates` 的输出标志与循环写法
   - 动手：从 XML 读能力标志、抽取 ME/CS/SE 调用序列、对照 Reference 状态掩码
   - 规范：[2.3 节](../spec-3.0.2/html/index.html#common-state-machine)
-- [ ] **第 7 章 Model Exchange**
-  - 连续时间模式、事件模式、`fmi3EnterEventMode`
-  - 导数、离散状态、事件指示器
-  - 调用序列：`simulate_fmi3_me.c` 逐行讲解
-  - 规范：3.1 / 3.2 / 3.3 节
+- [x] **第 7 章 Model Exchange** → [07-model-exchange.md](07-model-exchange.md)
+  - 连续时间模式、关系冻结、导数与事件指示器
+  - 状态事件的符号域定义、事件定位、`fmi3CompletedIntegratorStep`
+  - `fmi3SetTime` 的回退规则与四类事件
+  - 调用序列：`simulate_fmi3_me.c` 逐段讲解与 `NX`/`NZ` 陷阱
+  - 动手：XML 能力盘点、BouncingBall 事件扫描、ME 调用日志
+  - 规范：3.1 / 3.2 / 3.3 / 3.4 节
 - [ ] **第 8 章 Co-Simulation**
   - 步进接口 `fmi3DoStep`、早返回、中间更新
   - 通信步长与 `fmi3Set{Interval|Shift}Fraction`

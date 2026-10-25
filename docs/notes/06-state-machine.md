@@ -1387,4 +1387,4 @@ switch (S->type) {
 
 本章建立了公共骨架。下一章进入 Model Exchange：连续时间模式、事件指示器、导数计算，以及 `simulate_fmi3_me.c` 的逐行讲解。
 
-→ 第 7 章 Model Exchange（待写）
+→ [第 7 章 Model Exchange](07-model-exchange.md)

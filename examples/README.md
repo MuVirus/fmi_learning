@@ -121,6 +121,7 @@ extra/org.fmi-standard.fmi-ls-ref/...
 | [`xml/units-and-types.xml`](xml/units-and-types.xml) | 第 5 章实验：单位、显示单位、类型定义、枚举 |
 | [`scripts/validate-model-description.ps1`](scripts/validate-model-description.ps1) | 用官方 XSD 做结构校验 |
 | [`scripts/check-model-description.ps1`](scripts/check-model-description.ps1) | 检查 XSD 表达不了的语义规则（引用、唯一性、`initial`/`start` 等） |
+| [`scripts/bouncing-ball-event-scan.ps1`](scripts/bouncing-ball-event-scan.ps1) | 第 7 章实验：用显式欧拉扫描 BouncingBall 的事件序列，不依赖 FMU 二进制 |
 
 ```powershell
 .\examples\scripts\validate-model-description.ps1 .\examples\xml\units-and-types.xml

@@ -32,7 +32,7 @@ docs/
 
 ## 3. 中文讲义 `notes/`
 
-`notes/` 是课程正文。第一、二部分已完成初稿，第三部分从第 6 章开始：
+`notes/` 是课程正文。第一、二部分已完成初稿，第三部分已完成第 6–7 章：
 
 - [第 1 章 为什么需要 FMI](notes/01-why-fmi.md)
 - [第 2 章 解包一个 FMU](notes/02-unpack-fmu.md)
@@ -40,6 +40,7 @@ docs/
 - [第 4 章 变量系统](notes/04-variables.md)
 - [第 5 章 单位、类型与注解](notes/05-units-types-annotations.md)
 - [第 6 章 公共状态机](notes/06-state-machine.md)
+- [第 7 章 Model Exchange](notes/07-model-exchange.md)
 
 后续章节（三种接口状态机、动手实现）的大纲见 [`notes/README.md`](notes/README.md)。
 
